@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>chili.js - Code Highlighter</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@100..700&display=swap');
+      html { font-family: "M PLUS Code Latin", sans-serif; font-size: 1.2rem; color: #CCC; background: #222; }
+      body { margin: 0 auto; }
+      header { padding: 40px 10px; background:#2e2e2e; border-bottom: 2px solid #444; }
+      header h1, header h3 { margin: 0; }
+      header h1 { font-size: 3rem; text-align: center; }
+      header h3 { text-align: center; }
+      main { margin: 0 auto; padding: 30px 10px; max-width: 700px; }
+      footer { padding: 10px 10px; font-size: 0.8rem; text-align: center; background:#2e2e2e; border-top: 2px solid #444; }
+      h1, h2, h3, h4, h5, h6 { font-weight: 500; color: #FFF; }
+      h2, h3 { margin-top: 50px; }
+      a { color: #CCC; }
+      .orange { color: #FB0 !important; }
+      .gray { color: #555; }
+    </style>
+
+    <script src="chili.js" defer onload="chili('.highlight')"></script>
+  </head>
+  <body>
+    <header>
+      <h1><span class="orange">chili</span><span class="gray">.js</span></h1>
+      <h3>Code Highlighter</h3>
+    </header>
+    <main>
+      <h2>What is it?</h2>
+      <p>A small library to highlight code in HTML</p>
+      <h2>Usage</h2>
+      <p>You can import it and add a DOMContentLoaded event to bind to elements that should be highlighted.</p>
+
+<pre class="highlight">
+&lt;script src="chili.js"></script>
+&lt;script>
+  window.addEventListener("DOMContentLoaded", () => {
+    chili('.highlight');
+  });
+&lt;/script>
+
+&lt;div class="highlight">
+  const variable = "Code example";
+  console.log(variable);
+&lt;/div>
+</pre>
+
+      <p>A compact way using "defer" and "onload" attributes should work as well.</p>
+
+<pre class="highlight">
+&lt;script src="chili.js" defer onload="chili('.highlight')"></script>
+</pre>
+
+      <p>Or just embed the code itself with copy/paste instead of load as script.</p>
+      <p>The library was made to be the simplest and smallest possible to be embeded like this. Is useful for small code examples and documentations.</p>
+
+      <h2>Languages support</h2>
+      <p>The library is language agnostic and should highlight any C based language or the main known programming languages.</p>
+      <p>Some languages should work better than others.</p>
+
+      <h3>Python</h3>
+
+<pre class="highlight">
+def hello_world():
+  print("Hello World!")
+
+if __name__ == "__main__":
+  hello_world()
+</pre>
+
+      <h3>SQL</h3>
+
+<pre class="highlight">
+CREATE TABLE helloworld (phrase TEXT);
+INSERT INTO helloworld VALUES ("Hello, World!");
+INSERT INTO helloworld VALUES ("Goodbye, World!");
+SELECT COUNT(*) FROM helloworld;
+</pre>
+
+      <h3>Go</h3>
+
+<pre class="highlight">
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("hello world")
+}
+</pre>
+
+      <h3>Java</h3>
+
+<pre class="highlight">
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+</pre>
+
+      <h2>Download</h2>
+      <a href="https://github.com/henriquegogo/chili">GitHub Repository</a>
+
+      <h2>License</h2>
+      <p>MIT</p>
+    </main>
+    <footer>
+      Made for fun by <a href="https://gogs.com.br" target="_blank">Henrique Gogó</a>
+    </footer>
+  </body>
+</html>
