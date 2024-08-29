@@ -1,5 +1,5 @@
 function chili(selector) {
-  document.body.innerHTML += `<style>${selector} span * { color: inherit !important }</style>`;
+  document.head.insertAdjacentHTML('beforeend', `<style>${selector} span * { color: inherit !important }</style>`);
   document.querySelectorAll(selector).forEach((element) => {
     Object.assign(element.style, {
       backgroundColor: "#111", color: "#bbb", fontFamily: "monospace", padding: "25px", whiteSpace: "pre-wrap"
